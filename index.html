@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/33fdf9b61f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>JsBank</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <a class="navbar-brand ml-2 font-weight-bold" href="#">JSbank</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Fernando Giroto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Javascript Code</a>
+          </li>
+        </ul>
+        <p class="welcome pt-3 mr-4">Log in</p>
+        <form class="login-form">
+          <input
+            type="text"
+            placeholder="user"
+            class="login__input login__input--user"
+          />
+          <input
+            type="text"
+            placeholder="PIN"
+            maxlength="4"
+            class="login__input login__input--pin"
+          />
+          <button class="login__btn">
+            <i class="fas fa-check-circle"></i>
+          </button>
+        </form>
+        <a href="#" class="btn btn-danger logout-button">Log Out</a>
+      </div>
+    </nav>
+    <!-- TOP NAVIGATION -->
+    <div class="container pt-5 ">
+
+      <div class="open-page">
+        <div class="jumbotron">
+          <h1 class="display-4">Hello, world!</h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </p>
+        </div>
+      </div>
+      <div class="app">
+        <div class="row">
+          <div class="col-12 col-md-7">
+            <!-- USER DATA MOVEMENTS -->
+            <p class="balance__label">Current balance</p>
+            <p class="balance__date">
+              As of <span class="date">05/03/2037</span>
+            </p>
+            <div class="list-group mb-4">
+              <li class="list-group-item list-group-item-light">Last Movements</li>
+              <ul class="movements">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                  Cras justo odio
+                  <span class="badge badge-primary badge-pill">14</span>
+                </li>
+              </ul>
+              <!-- SUMMARY -->
+              <div class="summary">
+                <button type="button" class="btn btn-success">
+                  In <span class="badge badge-light summary__value--in">9</span>
+                  <span class="sr-only">unread messages</span>
+                </button>
+                <button type="button" class="btn btn-danger">
+                  Out <span class="badge badge-light summary__value--out">9</span>
+                  <span class="sr-only">unread messages</span>
+                </button>
+                <button type="button" class="btn btn-warning">
+                  Interest <span class="badge badge-light summary__value--interest">9</span>
+                  <span class="sr-only">unread messages</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-12 col-md-5">
+            <div class="d-flex flex-column">
+            <!-- USER INFORMATION -->
+            <div class="card mb-4">
+              <div class="card-header">Client Information</div>
+              <div class="card-body">
+                <h5 class="card-title owner">Name: ---</h5>
+                <p class="card-text owner-username">Username: ---</p>
+                <p class="card-text owner-balcance balance__value">Cash: --€</p>
+                <!-- LOGOUT TIMER -->
+                <p class="card-text">
+                  You will be logged out in <span class="timer">02:00</span>
+                </p>
+                <div class="card-footer bg-transparent p-0 pt-3 d-flex">
+                  <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#changeNameModal">
+                    Change Username
+                  </button>
+                  <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#changePasswordModal">
+                    Change Password
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- CHANGE PASSWORD MODAL -->
+            <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModal" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">CHANGE PASSWORD</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-inline">
+                      <input
+                        type="text"
+                        class="form-control mb-2 mr-sm-2 password_actual"
+                        id="password_actual"
+                        placeholder="Your Password"
+                      />
+                      <input
+                        type="text"
+                        class="form-control mb-2 mr-sm-2 password_new"
+                        id="password_new"
+                        placeholder="New Password"
+                        required
+                      />
+                      <button type="submit" data-dismiss="modal" class="btn btn-primary mb-2 btnChangePassword">
+                        Change Password
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- CHANGE NAME MODAL -->
+            <div class="modal fade" id="changeNameModal" tabindex="-1" role="dialog" aria-labelledby="changeNameModal" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">CHANGE NAME</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-inline">
+                      <input
+                        type="text"
+                        class="form-control mb-2 mr-sm-2 name_actual_pin"
+                        id="name_actual_pin"
+                        placeholder="Your PIN"
+                      />
+                      <input
+                        type="text"
+                        class="form-control mb-2 mr-sm-2 name_new"
+                        id="name_new"
+                        placeholder="New Name"
+                        required
+                      />
+                      <button type="submit" data-dismiss="modal" class="btn btn-primary mb-2 btnChangeName">
+                        Change Name
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>          
+
+            <!-- TRANSFER MONEY -->
+            <div id="accordion">
+              <div class="card bg-warning mb-3">
+                <div class="card-header" id="transferAccordion">
+                  <h5 class="mb-0">
+                    <p  data-toggle="collapse" data-target="#collapseTransfer" aria-expanded="false" aria-controls="collapseTransfer"> Transfer Money</p>
+                  </h5>
+                </div>
+                <div id="collapseTransfer" class="collapse" aria-labelledby="transferAccordion" data-parent="#accordion">
+                  <div class="card-body">
+                    <form class="form-inline">
+                      <label class="sr-only" for="inlineFormInputName3">Name</label>
+                      <input
+                        type="text"
+                        class="form-control mb-2 mr-sm-2 form__input--to"
+                        
+                        placeholder="Transfer to"
+                      />
+                      <input
+                        type="text"
+                        class="form-control mb-2 mr-sm-2 form__input--amount"
+                        
+                        placeholder="Amount"
+                      />
+                      <button type="submit" class="btn btn-primary mb-2 form__btn--transfer">
+                        Transfer
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- LOAN MONEY -->
+            <div class="card bg-info mb-4">
+              <div class="card-header">Loan Money</div>
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <form class="form form--loan">
+                  <input type="number" class="form__input form__input--loan-amount" />
+                  <button class="form__btn form__btn--loan">&rarr;</button>
+                  <label class="form__label form__label--loan">Amount</label>
+                </form>
+              </div>
+            </div>
+            <!-- CLOSE ACCOUNT -->
+            <div class="card bg-danger mb-4">
+              <div class="card-header">Close Account</div>
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <form class="form form--close">
+                  <input type="text" class="form__input form__input--user" />
+                  <input
+                    type="password"
+                    maxlength="6"
+                    class="form__input form__input--pin"
+                  />
+                  <button class="form__btn form__btn--close">&rarr;</button>
+                  <label class="form__label">Confirm user</label>
+                  <label class="form__label">Confirm PIN</label>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
